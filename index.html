@@ -8,6 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+  .gallery,
+.message {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
 .gallery {
   text-align: center;
   padding: 30px 10px;
@@ -88,13 +95,18 @@ body{
     url("bg.jpg");
   background-size:cover;
   background-position:center;
-  overflow-x:hidden;
-  overflow-y: auto;
+
+  /* FIX */
   display:flex;
-  justify-content:center;
+  flex-direction:column;   /* Stack vertically */
   align-items:center;
+  justify-content:flex-start;
+
   padding:20px;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
+
 
 body::before{
   content:"";
@@ -119,14 +131,15 @@ body::before{
 .card{
   position:relative;
   width:100%;
-  max-width:380px;
-  padding:32px 26px;
-  border-radius:30px;
+  max-width:360px;
+  padding:28px 22px;
+  border-radius:26px;
   text-align:center;
   background:linear-gradient(135deg,#fff,#fff5f8);
   box-shadow:0 12px 35px rgba(255,77,109,.45);
   animation:pop .6s ease, glow 4s infinite;
 }
+
 
 .card::before{
   content:"";
